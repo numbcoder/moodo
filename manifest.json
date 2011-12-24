@@ -1,0 +1,16 @@
+{
+  "name": "MooDo",
+  "app": {
+    "launch": {
+      "local_path": "main.html"
+    }
+  },
+  "version": "1.0",
+  "description": "A powerful live preview Markdown editor",
+  
+  "icons": {
+    "128": "img/markdown-icon.png"
+  },
+  "permissions": [ "tabs", "http://*/*", "https://*/*" ]
+
+}
