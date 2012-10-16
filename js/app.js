@@ -24,12 +24,27 @@ window.onload = function() {
 
   var preview = document.getElementById('preview');
 
+  // Set default options
+  marked.setOptions({
+    gfm: true,
+    pedantic: false,
+    sanitize: true,
+    // callback for code highlighter
+    highlight: function(code, lang) {
+      if (lang === 'js') {
+        return javascriptHighlighter(code);
+      }
+      return code;
+    }
+  });
+
   var getText = function(){
     return editor.getSession().getValue();
   };
 
   var loadHtml = function(text){
-    preview.innerHTML = markdown.toHTML(text);
+    // preview.innerHTML = markdown.toHTML(text);
+    preview.innerHTML = marked(text);
   };
 
   var saveDraft = function(text){
@@ -61,7 +76,7 @@ window.onload = function() {
     t = setTimeout(function(){
       codeHighlight();
       saveDraft(getText());
-    }, 1600);
+    }, 2000);
   };
 
   editor.getSession().on('change', function(a){

@@ -1,5 +1,6 @@
 {
   "name": "MooDo",
+  "manifest_version": 2,
   "app": {
     "launch": {
       "local_path": "main.html"
@@ -11,6 +12,7 @@
   "icons": {
     "128": "img/markdown-icon.png"
   },
+
   "permissions": [ "tabs", "http://*/*", "https://*/*" ]
 
 }
