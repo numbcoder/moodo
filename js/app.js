@@ -1,6 +1,7 @@
  function exportFile(fileName, fileData) {
   try {
     var Blob = new ( window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder );
+    //var 
     Blob.append(fileData);
     saveAs(Blob.getBlob("text/plain;charset=utf-8"), fileName);
   } catch (e) {
@@ -31,10 +32,7 @@ window.onload = function() {
     sanitize: true,
     // callback for code highlighter
     highlight: function(code, lang) {
-      if (lang === 'js') {
-        return javascriptHighlighter(code);
-      }
-      return code;
+      return hljs.highlight(lang, code).value;
     }
   });
 
@@ -43,7 +41,6 @@ window.onload = function() {
   };
 
   var loadHtml = function(text){
-    // preview.innerHTML = markdown.toHTML(text);
     preview.innerHTML = marked(text);
   };
 
@@ -67,14 +64,14 @@ window.onload = function() {
   if(draft){
     editor.getSession().setValue(draft);
     loadHtml(draft);
-    codeHighlight();
+    //codeHighlight();
   }
 
   var t;
   var saveAndHlight = function(){
     clearTimeout(t);
     t = setTimeout(function(){
-      codeHighlight();
+      //codeHighlight();
       saveDraft(getText());
     }, 2000);
   };
@@ -85,15 +82,17 @@ window.onload = function() {
     saveAndHlight();
   });
 
-/*
-  setTimeout(function(){
-    console.log(234);
-    exportFile('a.md', 'hello world~~~~~~~~~~~~~!');
-  }, 5000);
-*/
+  document.getElementById('export').onclick = function () {
+    exportFile('untitled.md', getText());
+  };
 
 };
 
+/**
+ * TODO
+ *   BlobBuilder -> Blob
+ *   higlightjs complied error
+**/
 
 
 

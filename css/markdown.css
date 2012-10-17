@@ -1,13 +1,16 @@
 
-h1, h2, h3, h4, h5 {
-    color: #111111;
-    font-weight: bold;
+h1, h2, h3, h4, h5, h6 {
+  color: #111111;
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  color: inherit;
+  text-rendering: optimizelegibility;
 }
-
 h1 {
     font-size: 30px;
     line-height: 36px;
-    margin-bottom: 18px;
 }
 h2 {
   font-size: 24px;
@@ -18,12 +21,16 @@ h3 {
     line-height: 34px;
 }
 h4 {
-    font-size: 18px;
-    line-height: 32px;
-}
-h5 {
     font-size: 16px;
     line-height: 30px;
+}
+h5 {
+    font-size: 12px;
+    line-height: 22px;
+}
+h6 {
+  font-size: 10px;
+  line-height: 12px;
 }
 a {
     color: #0099ff;
@@ -40,10 +47,10 @@ a:visited {
 }
 ul, ol {
     padding: 0;
-    margin: 0 0 18px 30px;
+    margin: 0 0 12px 30px;
 }
 li {
-    line-height: 24px;
+    line-height: 22px;
     color: #737373;
 }
 li ul, li ul {
@@ -53,6 +60,9 @@ p, ul, ol {
     font-size: 15px;
     line-height: 22px;
 }
+p {
+  margin: 0 0 10px;
+}
 pre {
     background-color: #F9F9F9;
     border: 1px dashed rgba(0, 0, 0, 0.15);
@@ -60,7 +70,7 @@ pre {
    /* padding: 14px 24px; */
     max-width: 700px;
     white-space: pre-wrap;
-    margin: 0 5px;
+    margin: 5px 0;
     /*box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);*/
 }
 code {
@@ -75,11 +85,11 @@ code {
     margin: 0 2px; 
 }
 pre > code {
-  background: none repeat scroll 0 0 #F9F9F9;
+  /*background: none repeat scroll 0 0 #F9F9F9;*/
   border: none;
   /*border-radius: 4px 4px 4px 4px;*/
   margin: 0;
-  padding: 10px 20px;
+  padding: 10px;
 }
 aside {
     display: block;
@@ -87,9 +97,9 @@ aside {
     width: 390px;
 }
 blockquote {
-    border-left:.4em solid #eee;
-    padding: 0 1.5em;
-    margin-left: 15px;
+    border-left: 5px solid #ededed;
+    padding: 0 20px;
+    margin-left: 18px;
     max-width: 600px;
 }
 blockquote ul, blockquote ol{
